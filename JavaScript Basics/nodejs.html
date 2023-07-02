@@ -7,7 +7,27 @@
 </head>
 <body>
     <script>
-        
+// Program that shows single threaded, Asynchronus, Non blocking, Dynamically typed and Event driven features of Nodejs
+        function myFunction(x)
+        {
+            setTimeout(x,3000);
+        }
+
+        let text = "fine";
+        let cnt=0;
+
+        document.write("Hello");
+        myFunction(function(){
+            document.write(text);
+            count();
+        });
+
+        document.write("<br>" + "How are you?" + "<br>");
+        function count()
+        {
+            cnt++;
+            document.write("<br>"+"count :", cnt);
+        }
     </script>
 </body>
 </html>

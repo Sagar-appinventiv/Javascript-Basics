@@ -51,31 +51,27 @@
             return a-b;
         }))
 
-// Using Map method
-        console.log('Using Map :');
-        var arr = [30,24,26];
-        let a = arr.map((value)=>{
-            console.log(value);
-            return value + 10;
-        })
-        console.log(a);
+// Using Filter, Map and Reduce method
 
-// Using filter method
-        console.log('Using filter :');
-        let arr2 = [1,2,3,4,5,6,9,8,7,10];
-        let a2 = arr2.filter((value)=>{
-            return value<7;
-        })
-        console.log(a2);
+            console.log("Using filter, map and reduce method : ")
+            let array = [
+            {firstname : "Shinchan", lastname : "Nohara", age : 5},
+            {firstname : "Mitsy", lastname : "Nohara", age : 28},  
+            {firstname : "Hiroshi", lastname : "Nohara", age : 30},
+            {firstname : "Himavari", lastname : "Nohara", age : 1}
+            ]  
 
-// Using reduce method
-        console.log('Using reduce :');
-        let arr3 = [1,2,3,4,3,2,1];
-        let a3 = arr3.reduce((p,q)=>{
-            return p * q;
-        })
-        console.log(a3);
+            let output = array.filter((x)=>x.age<20).map((x)=>x.firstname + " " + x.lastname)
 
+            let result = array.reduce((accum,curr)=>{
+            if(curr.age>20)
+            {
+                accum[curr.firstname + " " + curr.lastname] = curr.age;
+            }
+            return accum;
+            },{})
+            console.log(output);
+            console.log(result);
 
         </script>
 </body>
